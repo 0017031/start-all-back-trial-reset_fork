@@ -149,6 +149,7 @@ void SABTR_TestKeys(HKEY hKey) {
   printf(" | INFO: Found %d subkeys\n", cSubKeys);
 
   for (i = 0; i < cSubKeys; i++) {
+    printf("%d", i);
     cbName = MAX_KEY_LENGTH;
     retCode = RegEnumKeyEx(hKey, i,
       achKey,
