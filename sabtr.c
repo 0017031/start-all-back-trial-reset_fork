@@ -34,7 +34,7 @@
 //       involved.
 #include <shlobj.h>
 
-//#define SABTR_DEBUG
+#define SABTR_DEBUG
 #define SABTR_REG_KEY "Software\\Microsoft\\Windows\\"\
                       "CurrentVersion\\Explorer\\CLSID"
 
@@ -44,13 +44,13 @@
 
 BOOL g_subkeyMatched = FALSE;
 BOOL g_subkeyWasWarned = FALSE;
-LPCSTR g_subkeyMatchedPath[MAX_KEY_LENGTH];
-LPCSTR g_subkeyMatchedName[MAX_KEY_LENGTH];
+char g_subkeyMatchedPath[MAX_KEY_LENGTH];
+char g_subkeyMatchedName[MAX_KEY_LENGTH];
 
 int SABTR_ConcatSubkeysValues(HKEY hKey, LPCSTR lpSubKey) {
   HKEY hKeyHandle;
 
-  LPCSTR concatKey[MAX_KEY_LENGTH];
+  char concatKey[MAX_KEY_LENGTH];
   sprintf_s(concatKey, MAX_KEY_LENGTH, "%s\\%s", SABTR_REG_KEY,
     lpSubKey);
 
@@ -210,7 +210,7 @@ void SABTR_TestKeys(HKEY hKey) {
 }
 
 int main() {
-  BOOL admin = IsUserAnAdmin();
+  BOOL admin =  1; // IsUserAnAdmin();
 
   printf("[+] INFO: Acquiring user type information\n");
 

@@ -1,4 +1,10 @@
 *.exe
+*.obj
 Thumbs.db
 .DS_Store
 *.DS_Store
+
+.*/
+*build*/
+*[Dd]ebug*/
+*[Rr]elease*/
